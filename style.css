@@ -1,0 +1,342 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #000;
+  color: #fff;
+  overflow: hidden;
+
+  background: url("b.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-attachment: fixed;
+}
+
+.container {
+  text-align: center;
+  vertical-align: middle;
+}
+
+h1 {
+  font-size: 7rem;
+  color: wheat;
+  -webkit-text-stroke: 3px darkcyan;
+  -webkit-text-stroke: 0.09375rem #0d1b1e;
+  -o-text-stroke: 0.09375rem #0d1b1e;
+  color: darkcyan;
+  letter-spacing: 6px;
+  text-shadow: 5px 5px 0px darkblue;
+  margin-top: 1rem;
+}
+
+#inputText {
+  color: black;
+  width: 35rem;
+  height: 3rem;
+  font-size: 2rem;
+  vertical-align: middle;
+  text-align: left;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 0.1rem solid blue;
+  outline: none;
+  border-radius: 1rem;
+  font-weight: bold;
+  background-color: wheat;
+  margin-top: -20px;
+}
+
+::-webkit-input-placeholder {
+  text-transform: none;
+}
+
+/* ! Add Todo Button */
+#addBtn {
+  width: 14rem;
+  height: 3rem;
+  font-size: 2rem;
+  position: relative;
+  font-weight: bold;
+  border: 0.1rem solid green;
+  border-radius: 0.5rem;
+  outline: none;
+  text-align: center;
+  z-index: 0;
+  vertical-align: middle;
+  cursor: pointer;
+  color: white;
+  background: #111;
+  -webkit-text-stroke: 0.03rem black;
+}
+
+#addBtn:before {
+  content: "";
+  background: linear-gradient(45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+#addBtn:active:after {
+  background: transparent;
+}
+
+#addBtn:hover:before {
+  opacity: 1;
+}
+
+#addBtn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+#addBtn:active {
+  color: white;
+}
+
+/*! Clear Todos Button */
+#clearBtn {
+  width: 14rem;
+  height: 3rem;
+  font-size: 2rem;
+  position: relative;
+  font-weight: bold;
+  border: 0.1rem solid red;
+  border-radius: 0.5rem;
+  outline: none;
+  text-align: center;
+  z-index: 0;
+  vertical-align: middle;
+  cursor: pointer;
+  color: white;
+  background: #111;
+  -webkit-text-stroke: 0.03rem black;
+}
+
+#clearBtn:before {
+  content: "";
+  background: linear-gradient(45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+#clearBtn:active:after {
+  background: transparent;
+}
+
+#clearBtn:hover:before {
+  opacity: 1;
+}
+
+#clearBtn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+#clearBtn:active {
+  color: white;
+}
+
+/*! addedTodo */
+.newP {
+  color: black;
+  font-weight: bold;
+  font-size: 3rem;
+  -webkit-text-stroke: 0.01rem darkorange;
+  cursor: pointer;
+  margin: 5px;
+  margin-top: 10px;
+}
+
+.newP::first-letter {
+  text-transform: uppercase;
+}
+
+/* ! responsive */
+@media (max-width: 650px) {
+  body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+
+    background: url("a.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .container {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  h1 {
+    font-size: 5rem;
+    color: wheat;
+    -webkit-text-stroke: 3px darkcyan;
+    -webkit-text-stroke: 0.09375rem #0d1b1e;
+    -o-text-stroke: 0.09375rem #0d1b1e;
+    color: darkcyan;
+    letter-spacing: 6px;
+    text-shadow: 5px 5px 0px darkblue;
+  }
+
+  #inputText {
+    color: black;
+    width: 19rem;
+    height: 2.5rem;
+    font-size: 2rem;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 0.1rem solid rgba(255, 0, 106, 0.742);
+    outline: none;
+    border-radius: 1rem;
+    font-weight: bold;
+    background-color: wheat;
+  }
+
+  ::-webkit-input-placeholder {
+    text-transform: none;
+  }
+
+  /* ! Add Todo Button */
+  #addBtn {
+    width: 10rem;
+    height: 2rem;
+    font-size: 1.4rem;
+    position: relative;
+    font-weight: bold;
+    border: 0.1rem solid green;
+    border-radius: 0.5rem;
+    outline: none;
+    text-align: center;
+    z-index: 0;
+    vertical-align: middle;
+    cursor: pointer;
+    color: white;
+    background: #111;
+    -webkit-text-stroke: 0.03rem black;
+  }
+
+  /*! Clear Todos Button */
+  #clearBtn {
+    width: 10rem;
+    height: 2rem;
+    font-size: 1.4rem;
+    position: relative;
+    font-weight: bold;
+    border: 0.1rem solid red;
+    border-radius: 0.5rem;
+    outline: none;
+    text-align: center;
+    z-index: 0;
+    vertical-align: middle;
+    cursor: pointer;
+    color: white;
+    background: #111;
+    -webkit-text-stroke: 0.03rem black;
+  }
+
+  /*! addedTodo */
+  .newP {
+    color: black;
+    font-weight: bold;
+    font-size: 2rem;
+    -webkit-text-stroke: 0.01rem darkorange;
+    cursor: pointer;
+  }
+
+
+}
